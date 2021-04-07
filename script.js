@@ -28,6 +28,13 @@ searchButton.click(function () {
             var local = localStorage.setItem(keyCount, response.name);
             keyCount = keyCount + 1;
 
+            //start current weather append 
+            var currentCard = $(".currentCard").append("<div>").addClass("card-body");
+            currentCard.empty();
+            var currentName = currentCard.append("<p>");
+            // .addClass("card-text");
+            currentCard.append(currentName);
+            
             //adjust date 
             var timeUTC = new Date(response.dt * 1000);
             currentName.append(response.name + " " + timeUTC.toLocaleDateString("en-US"));
