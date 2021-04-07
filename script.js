@@ -2,6 +2,17 @@
 var searchButton = $(".searchButton");
 var apiKey = "ef5abdb71f846584dca1619109fb200e";
 
+//loop for persisting the data onto HMTL page
+for (var i = 0; i < localStorage.length; i++) {
+    var city = localStorage.getItem(i);
+    // console.log(localStorage.getItem("City"));
+    var cityName = $(".list-group").addClass("list-group-item");
+    cityName.append("<li>" + city + "</li>");
+}
+
+//key count for local storage 
+var keyCount = 0;
+
 //search button click event
 searchButton.click(function () {
 
